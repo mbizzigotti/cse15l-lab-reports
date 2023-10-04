@@ -1,3 +1,5 @@
+# Lab Report 1
+![image](lab1.jpg)
 # `cd` Command
 ### no arguments
 ```bash
