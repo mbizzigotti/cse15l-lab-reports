@@ -1,5 +1,5 @@
 # Lab Report 1
-![image](lab1.jpg)
+
 # `cd` Command
 ### no arguments
 **working directory**: "/home"
@@ -88,5 +88,7 @@ java Hello messages/en-us.txt
 ```
 It prints out the contents of the file given as input.
 This was not an error.
+
+![image](lab1.jpg)
 
 😭
