@@ -13,7 +13,7 @@ public void testReversed() {
 ## An input that does not induce a failure
 ```java
 @Test
-public void testReversed() {
+public void testReversed2() {
     int[] input1 = { };
     assertArrayEquals(new int[]{ }, Array.reversed(input1));
 }
@@ -58,6 +58,9 @@ command:
 ```sh
 grep -n "finch" ./technical/*/*.txt
 ```
+
+For this command it is searching through all the files that matched with `./technical/*/*.txt` to find a match of the expression "finch"; putting `-n` makes it so that not only will `grep` output the filenames and line, but also the line number for each match.
+
 output:
 
     technical/biomed/1471-2105-3-2.txt:7:        Galapagos finches led to an appreciation of the structural
@@ -68,6 +71,8 @@ command:
 ```sh
 grep -n "if (" ./technical/biomed/1471-2105-3-14.txt
 ```
+For this command it is searching in the file `./technical/biomed/1471-2105-3-14.txt` to find a match of the expression "if ("; putting `-n` makes it so that not only will `grep` output the filenames and line, but also the line number for each match.
+
 output:
 
     516:          if (sum of duplications in 
@@ -97,6 +102,9 @@ command:
 ```sh
 grep -o "[0-9,\.]\+ times \w\+ likely" ./technical/*/*.txt
 ```
+
+This command is searching for matches in every file that matches `./technical/*/*.txt` for any matches of the expression `[0-9,\.]\+ times \w\+ likely`, which is a regular expression that matches a number, then "times", then a word, then "likely". Putting `-o` shows only what matches this regular expression, instead of outputing the entire line of where the match was.
+
 output:
 
     ./technical/biomed/1471-2458-2-6.txt:1.5 times more likely
@@ -109,6 +117,9 @@ command:
 ```sh
 grep -o "mRNA is \w\{10\}\>" ./technical/*/*.txt
 ```
+
+This command is searching for matches in every file that matches `./technical/*/*.txt` for any matches of the expression `mRNA is \w\{10\}\>`, which is a regular expression that matches a "mRNA is ", then a 10 letter word. Putting `-o` shows only what matches this regular expression, instead of outputing the entire line of where the match was.
+
 output:
 
     ./technical/biomed/1471-213X-3-3.txt:mRNA is translated
@@ -132,6 +143,9 @@ command:
 ```sh
 grep -C 2 "U.S. Navy" ./technical/911report/chapter-6.txt
 ```
+
+This command searches for the string "U.S. Navy" in the file `./technical/911report/chapter-6.txt`, but putting the `-C 2` option makes it so that not only does the line that contains the match get output, but also the 2 lines above and 2 lines below.
+
 output:
 
     in the port of Aden, but the attempt failed when the suicide boat sank. More than
@@ -148,6 +162,9 @@ command:
 ```sh
 grep -C 1 "java\>" ./technical/*/*.txt
 ```
+
+This command searches for the word "java" with a space after in all the files that match `./technical/*/*.txt`, but putting the `-C 1` option makes it so that not only does the line that contains the match get output, but also the 1 line above and 1 line below.
+
 output:
 
     ./technical/biomed/1471-2105-3-12.txt-            prematurely. An error message "An internal error has
@@ -176,6 +193,9 @@ command:
 ```sh
 grep -l "Feynman" ./technical/*/*.txt
 ```
+
+This command searches for the word "Feynman" in all the files that match `./technical/*/*.txt`, but having the `-l` option makes it so that only the file path from the files that match get output from the command.
+
 output:
 
     ./technical/plos/journal.pbio.0020073.txt
@@ -187,6 +207,9 @@ command:
 ```sh
 grep -l "Nazi" ./technical/*/*.txt
 ```
+
+This command searches for the word "Nazi" in all the files that match `./technical/*/*.txt`, but having the `-l` option makes it so that only the file path from the files that match get output from the command.
+
 output:
 
     ./technical/911report/chapter-3.txt
